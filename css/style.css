@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+/* header */
+header {
+  background: url("../images/background_header.jpg") no-repeat;
+  background-size: cover;
+  height: 750px; }
+  header .navbar-inverse {
+    background: transparent;
+    border: none; }
+    header .navbar-inverse .container {
+      border-bottom: 1px solid #66697e;
+      padding: 15px 0 15px 15px; }
+    header .navbar-inverse .navbar-nav > li > a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.749);
+      font-weight: bold;
+      text-transform: uppercase; }
+      header .navbar-inverse .navbar-nav > li > a:hover {
+        color: #e84545; }
+  header h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 65px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 200px; }
+  header p {
+    font-size: 22px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    line-height: 1.5;
+    text-align: center;
+    padding: 15px; }
+  header .btn {
+    width: 196px;
+    height: 42px;
+    border-radius: 2px;
+    background-color: #e84545;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin-top: 81px; }
+    header .btn:hover {
+      color: rgba(255, 255, 255, 0.749); }
+
+/* section Features */
+.features {
+  margin-top: 100px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center; }
+  .features .row {
+    padding-bottom: 78px; }
+    .features .row h3 {
+      font-size: 14px;
+      color: #2d3033;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2;
+      padding: 20px; }
+    .features .row p {
+      font-size: 14px;
+      color: #6c7279;
+      line-height: 1.5;
+      padding: 0 30px; }
+
+/* section Works */
+.works img {
+  border: 1px solid #FFF;
+  width: 100%;
+  height: 35vh; }
+
+.works .col-md-3 {
+  position: relative;
+  padding: 0; }
+
+.works .worksDescription {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.2;
+  transition: 0.8s; }
+  .works .worksDescription h3 {
+    font-weight: bold;
+    text-transform: uppercase; }
+  .works .worksDescription h3, .works .worksDescription p {
+    visibility: hidden; }
+  .works .worksDescription:hover {
+    background-color: rgba(232, 83, 80, 0.8); }
+    .works .worksDescription:hover h3, .works .worksDescription:hover p {
+      visibility: visible; }
+
+/* section Team */
+.team {
+  margin-top: 100px;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.2; }
+  .team h3 {
+    font-size: 22px;
+    color: #2d3033; }
+  .team h4 {
+    font-size: 13px;
+    color: #e84545;
+    text-transform: uppercase;
+    padding-bottom: 15px; }
+  .team p {
+    font-size: 14px;
+    color: #6c7279; }
+  .team button {
+    margin-top: 15px;
+    width: 44px;
+    height: 44px;
+    background-color: #FFF;
+    border: 1px solid #e8ecee;
+    color: #c6cacc;
+    font-size: 20px; }
+    .team button:hover {
+      border-color: #e84545;
+      color: #2d3033; }
+
+/*# sourceMappingURL=style.css.map */
