@@ -118,41 +118,46 @@ header {
 /* section Works */
 
 .works {
-    img {
-        border: 1px solid #FFF;
-        @include size(100%, 35vh);
-    }
-    .col-md-3 {
-        position: relative;
+    .row {
         padding: 0;
-    }
-    .worksDescription {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        font-size: 14px;
-        color: $text-bright-color;
-        text-align: center;
-        @include flex-style(flex, center, center);
-        line-height: 1.2;
-        transition: 0.8s;
-        h3 {
-            font-weight: bold;
-            text-transform: uppercase;
+        margin: 0;
+        img {
+            border: 1px solid #FFF;
+            @include size(100%, 35vh);
         }
-        h3, p {
-            visibility: hidden;
+        .col-md-3 {
+            position: relative;
+            padding: 0;
         }
-        &:hover {
-            background-color: rgba(232, 83, 80, 0.8);
-            h3, p {
-                visibility: visible;
+        .worksDescription {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+            color: $text-bright-color;
+            text-align: center;
+            @include flex-style(flex, center, center);
+            line-height: 1.2;
+            transition: 0.8s;
+            h3 {
+                font-weight: bold;
+                text-transform: uppercase;
             }
+            h3, p {
+                visibility: hidden;
+            }
+            &:hover {
+                background-color: rgba(232, 83, 80, 0.8);
+                h3, p {
+                    visibility: visible;
+                }
+            }
+            
         }
-        
     }
+
 }
 
 /* section Team */
@@ -218,7 +223,11 @@ header {
         }
     }
     .carousel-indicators {
-        left: 75%;
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 75%;
+        left: 0;
         padding-bottom: 60px;
     }
 }
@@ -372,7 +381,8 @@ footer {
             }
         }
         .carousel-indicators {
-            left: 50%;
+            text-align: center;
+            padding-left: 0;
             padding-bottom: 40px;
         }
     }
@@ -453,7 +463,8 @@ footer {
             }
         }
         .carousel-indicators {
-            left: 50%;
+            text-align: center;
+            padding-left: 0;
             padding-bottom: 40px;
         }
     }
