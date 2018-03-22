@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Cardo');
 
+/* Variables */
+$text-bright-color: rgb(255, 255, 255);
+$text-dark-color: rgb(45, 48, 51);
+$text-light-color: rgb(108, 114, 121);
+$text-and-button-color: rgb(232, 69, 69);
+
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+@mixin flex-style($display, $align-items, $justify-content) {
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 * {
     box-sizing: border-box; 
 }
+
 /* header */
 
 header {
@@ -22,20 +40,31 @@ header {
             padding: 15px 0 15px 15px;
         }
         .navbar-nav>li>a {
-            font-family: 'Raleway', sans-serif;
             font-size: 13px;
             color: rgba(255, 255, 255, 0.749);
             font-weight: bold;
             text-transform: uppercase;
             &:hover {
-                color: #e84545;
+                color: $text-and-button-color;
+            }
+        }
+        .navbar-toggle {
+            border: none;
+            &:hover,
+            &:focus {
+                background-color: transparent;  
+            }
+            &:hover {
+                .icon-bar {
+                    background-color: $text-and-button-color;
+                }
             }
         }
     }
     h1 {
         font-family: 'Open Sans', sans-serif;
         font-size: 65px;
-        color: rgb(255, 255, 255);
+        color: $text-bright-color;
         font-weight: bold;
         text-transform: uppercase;
         text-align: center;
@@ -43,24 +72,21 @@ header {
     }
     p {
         font-size: 22px;
-        font-family: 'Raleway', sans-serif;
-        color: rgb(255, 255, 255);
+        color: $text-bright-color;
         line-height: 1.5;
         text-align: center;
         padding: 15px;
     }
     .btn {
-        width: 196px;
-        height: 42px;
+        @include size(196px, 42px);
         border-radius: 2px;
-        background-color: rgb(232, 69, 69);
-        color: rgb(255, 255, 255);
+        background-color: $text-and-button-color;
+        color: $text-bright-color;
         text-transform: uppercase;
-        font-family: 'Raleway', sans-serif;
         font-weight: bold;
         margin-top: 81px;
         &:hover {
-            color: rgba(255, 255, 255, 0.749);
+            color: $text-dark-color;
         }
     }
 }
@@ -69,13 +95,12 @@ header {
 
 .features {
     margin-top: 100px;
-    font-family: 'Raleway', sans-serif;
     text-align: center;
     .row {
         padding-bottom: 78px;
         h3 {
             font-size: 14px;
-            color: rgb(45, 48, 51);
+            color: $text-dark-color;
             font-weight: bold;
             text-transform: uppercase;
             line-height: 1.2;
@@ -83,7 +108,7 @@ header {
         }
         p {
             font-size: 14px;
-            color: rgb(108, 114, 121);
+            color: $text-light-color;
             line-height: 1.5;
             padding: 0 30px;
         }    
@@ -95,8 +120,7 @@ header {
 .works {
     img {
         border: 1px solid #FFF;
-        width: 100%;
-        height: 35vh;
+        @include size(100%, 35vh);
     }
     .col-md-3 {
         position: relative;
@@ -109,12 +133,9 @@ header {
         bottom: 0;
         left: 0;
         font-size: 14px;
-        font-family: 'Raleway', sans-serif;
-        color: #FFF;
+        color: $text-bright-color;
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-style(flex, center, center);
         line-height: 1.2;
         transition: 0.8s;
         h3 {
@@ -138,33 +159,316 @@ header {
 
 .team {
     margin-top: 100px;
-    font-family: 'Raleway', sans-serif;
     line-height: 1.2;
     h3 {
         font-size: 22px;
-        color: rgb(45, 48, 51);
+        color: $text-dark-color;
     }
     h4 {
         font-size: 13px;
-        color: rgb(232, 69, 69);
+        color: $text-and-button-color;
         text-transform: uppercase;
         padding-bottom: 15px;
     }
     p {
         font-size: 14px;
-        color: rgb(108, 114, 121);
+        color: $text-light-color;
     }
     button {
         margin-top: 15px;
-        width: 44px;
-        height: 44px;
+        @include size(44px, 44px);
         background-color: #FFF;
         border: 1px solid rgb(232, 236, 238);
         color: rgb(198, 202, 204);
         font-size: 20px;
         &:hover{
-            border-color: rgb(232, 69, 69);
-            color: rgb(45, 48, 51);
+            border-color: $text-and-button-color;
+            color: $text-dark-color;
+        }
+    }
+}
+
+/* section Testimonials */
+    
+.carousel {
+    margin-top: 100px;
+    background-color: #53354a;
+    .carousel-inner>.item>img {
+        @include size(50%, 500px);
+        object-fit: cover;
+    }
+    .carousel-caption {
+        @include flex-style(flex, initial, center);
+        right: 0;
+        left: 0;
+        padding-left: 55%;
+        padding-right: 9%;
+        height: 100%;
+        text-align: left;
+        flex-direction: column;
+        p {
+            font-size: 36px;
+            font-family: 'Cardo', serif;
+            font-style: italic;
+        }
+        h4 {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+    .carousel-indicators {
+        left: 75%;
+        padding-bottom: 60px;
+    }
+}
+
+/* section downloand */
+
+.download {
+    padding-top: 100px;
+    text-align: center;
+    h1 {
+        font-size: 28px;
+        color: $text-dark-color;
+    }
+    h3 {
+        font-size: 13px;
+        color: $text-dark-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+    }
+    button {
+        @include size(280px, 46px);
+        border-radius: 2px;
+        background-color: $text-and-button-color;
+        font-size: 13px;
+        color: $text-bright-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+        &:hover {
+            color: $text-dark-color;
+        }
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: 100px;
+    .contact {
+        height: 250px;
+        @include flex-style(flex, center, center);
+        background-color: #3a3e64;
+        text-align: center;
+        font-size: 14px;
+        h3 {
+            color: $text-bright-color;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.502);
+        }
+        button {
+            margin-top: 15px;
+            @include size(44px, 44px);
+            background-color: #3a3e64;
+            border: 2px solid #FFF;
+            color: $text-bright-color;
+            font-size: 20px;
+            &:hover{
+                border-color: rgba(255, 255, 255, 0.502);
+                color: rgba(255, 255, 255, 0.502);
+            }
+        }
+    }
+    .copyright {
+        height: 90px;
+        @include flex-style(flex, center, center);
+        flex-direction: column;
+        background-color: #313454;
+        font-size: 14px;
+        color: rgb(128, 128, 128);
+        text-align: center;
+    }
+    p {
+        margin: 0 0 5px;
+        i {
+            color: $text-and-button-color;
+        }
+        .author {
+            color: $text-bright-color;
+        }
+    }
+    
+}
+
+/* Media queries */
+
+@media(max-width: 767px) {
+    /* header */
+
+    header {
+        height: 100%;
+        h1 {
+            font-size: 30px;
+            margin-top: 100px;
+        }
+        p {
+            font-size: 17px;
+        }
+        .btn {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+
+    /* section Features */
+
+    .features {
+        .row {
+            padding-bottom: 0;
+            p {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    /* section Team */
+
+    .team {
+        text-align: center;
+        height: 100%;
+        img {
+            display: inline-block;
+        }
+        button {
+            margin-bottom: 30px;
+        }
+    }
+
+    /* section Testimonials */
+
+    .carousel {
+        margin-top: 50px;
+        .carousel-inner>.item>img {
+            @include size(100%, 350px);
+        }
+        .carousel-caption {
+            text-align: center;
+            padding-left: 25px;
+            p {
+                margin-bottom: 0;
+                padding: 15px;
+                font-size: 20px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            h4 {
+                margin-top: 0;
+                padding-bottom: 15px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        .carousel-indicators {
+            left: 50%;
+            padding-bottom: 40px;
+        }
+    }
+
+    /* section downloand */
+
+    .download {
+        padding-top: 50px;
+    }
+
+    /* Footer */
+
+    footer {
+        .contact {
+            height: 450px;
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    
+    /* header */
+    
+    header {
+        height: 100%;
+        h1 {
+            font-size: 40px;
+            margin-top: 100px;
+        }
+        p {
+            font-size: 20px;
+        }
+        .btn {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+
+    /* section Features */
+
+    .features {
+        .row {
+            padding-bottom: 0;
+            p {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    /* section Team */
+
+    .team {
+        button {
+            margin-bottom: 30px;
+        }
+    }
+
+    /* section Testimonials */
+
+    .carousel {
+        margin-top: 50px;
+        .carousel-inner>.item>img {
+            @include size(100%, 350px);
+        }
+        .carousel-caption {
+            text-align: center;
+            padding-left: 25px;
+            p {
+                margin-bottom: 0;
+                padding: 15px;
+                font-size: 20px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            h4 {
+                margin-top: 0;
+                padding-bottom: 15px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        .carousel-indicators {
+            left: 50%;
+            padding-bottom: 40px;
+        }
+    }
+
+    /* section downloand */
+
+    .download {
+        padding-top: 50px;
+    }
+
+    /* Footer */
+
+    footer {
+        .contact {
+            height: 400px;
         }
     }
 }
